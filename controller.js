@@ -40,7 +40,8 @@ function removeTeacher(){
 
 
 function move(){
-    model.inputView = `<input type="text" oninput="model.inputs.info = this.value" placeholder="legg til info"/>
+    model.inputView = `<input type="text" oninput="model.inputs.info = this.value" placeholder="legg til info"/>`
+    model.button = `
     <button onclick="leggtilInfo()"> legg til </button> `
  
     showStudentsTable();
@@ -55,17 +56,21 @@ function leggtilInfo(){
             info: model.inputs.info,
         })
     );
+    remove();
     model.inputView= '';
     model.inputs.info = '';
-        remove();
+    
 }
 
 function editModulToTeacher(i){
 
-    model.inputView = `<input type="text" oninput="model.inputs.info = this.value" placeholder="Endre modul til ${model.teachers[i].name}"/>
+    model.inputView = `
+    <input type="text" oninput="model.inputs.info = this.value" placeholder="Endre modul til ${model.teachers[i].name}"/>
     <button onclick="changeModul(${i})"> endre </button> `
     showTeacherTable()
 }
+
+
 function changeModul(teachInd){
     model.teachers[teachInd].info = model.inputs.info
     model.inputView = '';

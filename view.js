@@ -9,7 +9,7 @@ appDiv.innerHTML = `
 `;
 }
 function showStudentsTable(){
-
+ 
         let html = `<button onclick="view()"> Tilbake </button>
         <table>
             <tr><th> marker</th> <th> Studenter</th><th>Modul</th></tr>
@@ -18,7 +18,8 @@ function showStudentsTable(){
             
         html += `</table>
              ${model.inputView}
-            <button onclick="remove()">slett</button><button onclick="move()"> Flytt Til Lærer</button><br><br>`;
+            <button onclick="remove()">slett</button>
+            ${model.button}`;
     appDiv.innerHTML = html
  }
 
@@ -29,7 +30,7 @@ function showStudentsTable(){
     </table>
     ${model.inputView}
     <button onclick="removeTeacher()">slett</button>
-    ${model.inputView}`;
+    `;
     
     appDiv.innerHTML = html;
 }

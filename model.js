@@ -42,6 +42,6 @@ const model = {
             info: 'modul 1'
         },
     ],
-    button: '',
+    button: '<button onclick="move()"> Flytt Til Lærer</button><br><br>',
 
 }
